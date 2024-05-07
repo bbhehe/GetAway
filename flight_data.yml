@@ -9,5 +9,5 @@
         method: GET
     register: results
 
-    - debug:
-        var: results
+- debug:
+    var: results
