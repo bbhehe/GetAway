@@ -1,0 +1,16 @@
+---
+- name: Fetch Flight Data from Google Flights API
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Copy Python script to the target server
+      copy:
+        src: flight_data.py
+        dest: /usr/local/bin/flight_data.py
+        mode: '0755'
+
+    - name: Schedule cron job to run every 30 minutes
+      cron:
+        name: "Fetch Flight Data"
+        minute: "*/30"
+        job: "/usr/bin/python3 /usr/local/bin/flight_data.py"
