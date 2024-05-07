@@ -7,7 +7,7 @@
     ansible.builtin.uri:
         url: https://serpapi.com/search.html?engine=google_flights&departure_id=BUD&arrival_id=VIE&gl=us&hl=en&currency=USD&outbound_date=2024-05-08&return_date=2024-05-14&api_key=f993cfbb3db7547d47cfae99621152f1288a15b909a385b7e515ae6e3758ac8f
         method: GET
-      register: results
+    register: results
 
     - debug:
         var: results
